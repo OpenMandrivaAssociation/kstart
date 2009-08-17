@@ -1,5 +1,5 @@
 %define name    kstart
-%define version 3.14
+%define version 3.15
 %define release %mkrel 1
 
 Name:		%{name}
