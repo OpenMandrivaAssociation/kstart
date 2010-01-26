@@ -1,6 +1,6 @@
 %define name    kstart
 %define version 3.16
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -10,6 +10,7 @@ License: 	GPL
 Group: 		Networking/Other
 URL: 		http://www.eyrie.org/~eagle/software/kstart/
 Source0: 	http://archives.eyrie.org/software/kerberos/%{name}-%{version}.tar.gz
+Source1:    kstart.init
 BuildRequires: 	krb5-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -34,6 +35,18 @@ single command.
 rm -rf %{buildroot}
 %makeinstall_std
 
+install -d -m 755 %{buildroot}%{_initrddir}
+install -m 755 %{SOURCE1} %{buildroot}%{_initrddir}/kstart
+install -d -m 755 %{buildroot}%{_sysconfdir}/sysconfig
+cat > %{buildroot}%{_sysconfdir}/sysconfig/kstart <<'EOF'
+# kstart service configuration file
+USER=apache
+PRINCIPAL=HTTP/$(hostname)
+KEYTAB=/etc/krb5.keytab
+PERIOD=10
+OPTIONS=
+EOF
+
 %clean
 rm -rf %{buildroot}
 
@@ -44,4 +57,5 @@ rm -rf %{buildroot}
 %{_bindir}/krenew
 %{_mandir}/man1/k5start.1*
 %{_mandir}/man1/krenew.1*
-
+%{_initrddir}/kstart
+%config(noreplace) %{_sysconfdir}/sysconfig/kstart
