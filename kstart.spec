@@ -1,6 +1,6 @@
 %define name    kstart
-%define version 3.16
-%define release %mkrel 3
+%define version 4.0
+%define release 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,10 +9,9 @@ Summary: 	Kinit daemon that uses srvtabs or keytabs
 License: 	GPL
 Group: 		Networking/Other
 URL: 		http://www.eyrie.org/~eagle/software/kstart/
-Source0: 	http://archives.eyrie.org/software/kerberos/%{name}-%{version}.tar.gz
-Source1:    kstart.init
-BuildRequires: 	krb5-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Source0:	http://archives.eyrie.org/software/kerberos/%{name}-%{version}.tar.gz
+Source1:	kstart.init
+BuildRequires:	krb5-devel
 
 %description
 k4start, k5start, and krenew are modified versions of kinit which add support
@@ -32,7 +31,6 @@ single command.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 install -d -m 755 %{buildroot}%{_initrddir}
@@ -47,11 +45,7 @@ PERIOD=10
 OPTIONS=
 EOF
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README TODO
 %{_bindir}/k5start
 %{_bindir}/krenew
