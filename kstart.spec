@@ -53,3 +53,35 @@ EOF
 %{_mandir}/man1/krenew.1*
 %{_initrddir}/kstart
 %config(noreplace) %{_sysconfdir}/sysconfig/kstart
+
+
+%changelog
+* Mon Jan 09 2012 Alexander Khrukin <akhrukin@mandriva.org> 4.1-1
++ Revision: 759164
+- version update 4.1
+
+* Wed Jan 04 2012 Alexander Khrukin <akhrukin@mandriva.org> 4.0-1
++ Revision: 753466
+- version update 4.0
+- version update 4.0
+
+* Mon Dec 06 2010 Oden Eriksson <oeriksson@mandriva.com> 3.16-3mdv2011.0
++ Revision: 612674
+- the mass rebuild of 2010.1 packages
+
+* Tue Jan 26 2010 Guillaume Rousse <guillomovitch@mandriva.org> 3.16-2mdv2010.1
++ Revision: 496742
+- add a service script for running automatically
+
+* Tue Jan 19 2010 Guillaume Rousse <guillomovitch@mandriva.org> 3.16-1mdv2010.1
++ Revision: 493844
+- update to new version 3.16
+
+* Mon Aug 17 2009 Frederik Himpe <fhimpe@mandriva.org> 3.15-1mdv2010.0
++ Revision: 417384
+- update to new version 3.15
+
+* Mon Jun 08 2009 Guillaume Rousse <guillomovitch@mandriva.org> 3.14-1mdv2010.0
++ Revision: 383879
+- import kstart
+
