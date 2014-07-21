@@ -1,0 +1,12 @@
+[Unit]
+Description=Kerberos ticket handler
+After=syslog.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/k5start.pid
+EnvironmentFile=/etc/sysconfig/kstart
+ExecStart=/usr/bin/k5start
+
+[Install]
+WantedBy=multi-user.target
