@@ -1,6 +1,6 @@
 Name:		kstart
 Version:	4.1
-Release: 	3
+Release: 	6
 Summary: 	Kinit daemon that uses srvtabs or keytabs
 License: 	GPL
 Group: 		Networking/Other
@@ -40,6 +40,15 @@ KEYTAB=/etc/krb5.keytab
 PERIOD=10
 OPTIONS=
 EOF
+
+%post
+%systemd_post %{name}.service
+
+%preun
+%systemd_preun %{name}.service
+
+%postun
+%systemd_postun_with_restart %{name}.service
 
 %files
 %doc README TODO
