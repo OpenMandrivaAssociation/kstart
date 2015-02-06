@@ -1,6 +1,6 @@
 Name:		kstart
 Version:	4.1
-Release: 	6
+Release: 	7
 Summary: 	Kinit daemon that uses srvtabs or keytabs
 License: 	GPL
 Group: 		Networking/Other
