@@ -4,7 +4,7 @@ Release:	1
 Summary: 	Kinit daemon that uses srvtabs or keytabs
 License: 	GPL
 Group: 		Networking/Other
-URL: 		http://www.eyrie.org/~eagle/software/kstart/
+URL: 		https://www.eyrie.org/~eagle/software/kstart/
 Source0:	http://archives.eyrie.org/software/kerberos/%{name}-%{version}.tar.gz
 Source1:	kstart.service
 BuildRequires:	krb5-devel
