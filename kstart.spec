@@ -7,6 +7,11 @@ Group: 		Networking/Other
 URL: 		https://www.eyrie.org/~eagle/software/kstart/
 Source0:	http://archives.eyrie.org/software/kerberos/%{name}-%{version}.tar.gz
 Source1:	kstart.service
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	krb5-devel
 
 %description
